@@ -13,9 +13,12 @@ if __name__ == '__main__':
     robot2.health = 100
     robot2.power_level = 100
     robot3 = Robot('Ver 3.0')
-    robot2.health = 100
-    robot2.power_level = 100
-    robot_fleet = Fleet()
+    robot3.health = 100
+    robot3.power_level = 100
+    fleet = Fleet()
+    fleet.creat_fleet(robot1, robot2, robot3)
+
+
 
 
     dino1 = Dinosaur('T-Rex', 100)
@@ -27,6 +30,10 @@ if __name__ == '__main__':
     dino3 = Dinosaur('Compi', 100)
     dino3.health = 100
     dino3.energy = 100
+    herd = Herd()
+    herd.creat_herd(dino1,dino2,dino3)
+    print(herd.dinosaurs)
+
 
 
 

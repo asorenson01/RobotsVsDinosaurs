@@ -5,8 +5,10 @@ class Battlefield:
 
 # def run_game(): #void
 #
-# def battle(): #void
-#
+def battle():
+    
+
+
 # def dino_turn(dinosaur): #void
 #
 # def robo_turn(robot): #void
