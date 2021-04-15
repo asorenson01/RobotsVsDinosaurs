@@ -1,10 +1,9 @@
 class Robot:
     def __init__(self, name):
-        self.name = ''
+        self.name = name
         self.power_level = 0
         self.health = 0
-        self.Weapon
+        # self.weapon = Weapon
 
 
-
-    def attack(dinosaur): #void
+ # def attack(dinosaur): #void
