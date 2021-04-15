@@ -1,17 +1,21 @@
+from fleet import Fleet
+from herd import Herd
+
 class Battlefield:
     def __init__(self):
-        self.fleet = []
-        self.herd = []
+        self.fleet = Fleet ()
+        self.herd = Herd ()
 
 # def run_game(): #void
-#
-def battle():
-    
+
+# def battle():
+
 
 
 # def dino_turn(dinosaur): #void
 #
-# def robo_turn(robot): #void
+    # def robo_turn(robot):
+
 #
 # def show_dino_opponent_option(): #void
 #
