@@ -16,8 +16,10 @@ if __name__ == '__main__':
 
     first_battle = Battlefield()
 
+    first_battle.run_game()
 
-    first_battle.battle()
+
+
 
 
 

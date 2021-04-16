@@ -1,11 +1,13 @@
+import random
+
 import battlefield
 
 
 class Dinosaur:
     def __init__(self, type, attack_power):
-        self.type = type
+        self.type = input("Enter Type of Dino")
         self.energy = 0
-        self.attack_power = attack_power
+        self.attack_power = random.randint(5,10)
         self.health = 0
 
     def attack(self, target):

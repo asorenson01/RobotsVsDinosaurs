@@ -1,3 +1,6 @@
+import random
+
+import weapon
 from weapon import Weapon
 
 class Robot:
@@ -9,8 +12,8 @@ class Robot:
 
     def create_weapon(self):
         type = input ("Select Weapon Type")
-        power = 50
-        weapon = Weapon(type, power)
+        attack_power = random.randint(5,10)
+        weapon = Weapon(type, attack_power)
         return weapon
 
 
