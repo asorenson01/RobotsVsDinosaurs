@@ -1,6 +1,4 @@
-import dinosaur
 import fleet
-import herd
 from fleet import Fleet
 from herd import Herd
 
@@ -12,17 +10,10 @@ class Battlefield:
 
 # def run_game(): #void
 
-    def battle():
-        fleet.Fleet().creat_fleet()
-        x = herd.Herd().dinosaurs[1].energy / 20
-        y = herd.Herd().dinosaurs[1].attack_power / 90
+    def battle(self):
 
-        hit = 5
-        x = fleet.Fleet().robots[0].health
+        self.herd.dinosaurs[1].attack(self.fleet.robots[0])
 
-        print(x)
-
-        print(x)
 
 
 
