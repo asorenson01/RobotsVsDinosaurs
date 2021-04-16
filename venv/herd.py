@@ -15,5 +15,5 @@ class Herd:
         dino3.health = 100
         dino3.energy = 100
         self.dinosaurs.append(dino1)
-        self.dinosaurs.append(dino2)
-        self.dinosaurs.append(dino3)
+        # self.dinosaurs.append(dino2)
+        # self.dinosaurs.append(dino3)
