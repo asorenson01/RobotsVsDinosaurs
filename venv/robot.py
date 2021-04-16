@@ -17,10 +17,10 @@ class Robot:
         return weapon
 
 
-def attack(self, target):
-    print("<-------attacking-------->")
-    x = self.energy / 10
-    y = self.weapon.attack_power
-    z = x * y
-    self.energy -= 10
-    target.health = target.health - z
+    def attack(self, target):
+        print("<-------attacking-------->")
+        x = self.power_level / 10
+        y = self.weapon.attack_power
+        z = x * y
+        self.power_level -= 10
+        target.health = target.health - z

@@ -10,9 +10,19 @@ class Battlefield:
 
     def run_game(self):
         x = self.display_welcome()
-        while (len(self.fleet.robots) > 0 & len(self.herd.dinosaurs) > 0):
+        round = 1
+        while (round < 5):
+            print(f"Get ready to BATTLE, Round{round}")
+
             if (x == "Dino"):
                 self.dino_turn(self)
+                self.robo_turn(self)
+                round += 1
+            else:
+                self.robo_turn(self)
+                self.dino_turn(self)
+                round += 1
+        print("exiting the while loop for some reason")
 
 
 
@@ -20,7 +30,7 @@ class Battlefield:
 
 
 
-        print("Next part dummy")
+
 
     def display_welcome(self):
         print('Welcome to Robot Vrs Dinosaurs, Shortly we will be building a fleet of Robots to battle a heard of dinosaurs.  First we need to see who will go first')
@@ -81,14 +91,45 @@ class Battlefield:
                     self.herd.dinosaurs[dino - 1].attack(self.fleet.robots[robot - 1])
                     turn +=1
                 else:
-                    return
+                    pass
             elif (self.fleet.robots[robot-1].health <= 0):
                 self.fleet.robots.remove(self.fleet.robots[robot-1])
             else:
                 pass
         print("Turn is over now the Robots get a go!")
 
-    def robo_turn(robot):
+    def robo_turn(self,robot):
+        turn = 0
+        while turn < 4:
+            print ("Lets Pick a Robot to Attack!")
+            i = 0
+            while i < len(self.fleet.robots):
+                print(f"Press {i+1} for {self.fleet.robots[i].name}")
+                i += 1
+            robot = int(input("Make a Choice"))
+            print("Lets Pick a Target")
+            j = 0
+            while j < len(self.herd.dinosaurs):
+                print(f"Press{j+1} for {self.herd.dinosaurs[j].type}")
+                j += 1
+            dino = int(input("Make a Choice"))
+            self.fleet.robots[robot-1].attack(self.herd.dinosaurs[dino-1])
+            turn +=1
+            print(f"hart HIT!!!{self.herd.dinosaurs[dino-1].type}'s Health is at {self.herd.dinosaurs[dino-1].health}%")
+            if (self.herd.dinosaurs[dino-1].health > 0):
+                print(f"{self.herd.dinosaurs[dino-1].type} is still alive")
+                x = int(input("Press 1 to reattack, Press to 2 contine"))
+                if ( x == 1):
+                    self.fleet.robots[robot - 1].attack(self.herd.dinosaurs[dino - 1])
+                    turn +=1
+                else:
+                    pass
+            elif(self.herd.dinosaurs[dino-1].health <= 0):
+                self.herd.dinosaurs.remove(self.herd.dinosaurs[dino-1])
+            else:
+                pass
+        print("Trun is over now the Dino's get to go")
+
 
 
 
