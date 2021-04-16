@@ -22,32 +22,25 @@ class Battlefield:
                 self.robo_turn(self)
                 self.dino_turn(self)
                 round += 1
-        print("exiting the while loop for some reason")
-        self.display_winner(self)
-
-
-
-
-
-
-
-
+        self.display_winner()
 
 
     def display_welcome(self):
-        print('Welcome to Robot Vrs Dinosaurs, Shortly we will be building a fleet of Robots to battle a heard of dinosaurs.  First we need to see who will go first')
+        print('Welcome to Robot Vrs Dinosaurs, Shortly we will be building a FLEET of Robots to battle a HEARD of dinosaurs. Lets Quickly go over the rules.')
+        print('This will be a fight to the death, Each team is gaurenteed at least 3 attacks per turn but being aggressive may result in one extra attack.')
+        print('Now lets see who will go first call it when the coin is in the air.')
         x = int(input('Press 1 for Heads, Press 2 for Tails'))
         y = random.randint(1,2)
         if (x == 1 & y == 1):
-            print("We Will build the Robot Fleet first and they get first attack")
+            print("We Will build the Robot Fleet first and they will get the first attack")
             self.robot_call_to_arms()
-            print("Now you have an amazing fleet of Robots Lets get the Dinos ready to repel the attack")
+            print("Now you have an amazing fleet of Robots. Lets get the Dinos ready to repel the Robot attack")
             self.dino_call_to_arms()
             return "Robot"
         else:
-            print("Lets go Round some Dino's, build a Herd and get them ready to attack")
+            print("Lets go Round up some Dino's and build a Herd and attack thoes Robots")
             self.dino_call_to_arms()
-            print("What a amazing Herd of Huge Dinos! Let go build some Robots for your Dinos to Trample ")
+            print("What a amazing Herd of Huge Dinos! Let go build some Robots and put up a fight")
             self.robot_call_to_arms()
             return "Dino"
 
@@ -69,10 +62,10 @@ class Battlefield:
 
     def dino_turn(self,dino):
         turn = 0
-        while turn < 4:
+        while turn <= 3:
             if (len(self.herd.dinosaurs) > 0):
                 if (len(self.fleet.robots) > 0):
-                    print("Lets Pick a Dino to Attack!")
+                    print("Lets Pick a Dino to Attack thoes Robots!")
                     i = 0
                     while i < len(self.herd.dinosaurs):
                         print(f"Press {i+1} for {self.herd.dinosaurs[i].type}")
@@ -86,7 +79,7 @@ class Battlefield:
                     robot = int(input("Make a Choice"))
                     self.herd.dinosaurs[dino-1].attack(self.fleet.robots[robot-1])
                     turn += 1
-                    print(f"Hard HIT!!!{self.fleet.robots[robot-1].name}'s Health is at {self.fleet.robots[robot-1].health}% ")
+                    print(f" Hard HIT!!!{self.fleet.robots[robot-1].name}'s Health is at {self.fleet.robots[robot-1].health}% ")
                     if (self.fleet.robots[robot-1].health > 0):
                         print(f"{self.fleet.robots[robot-1].name}is still alive")
                         x = int(input("Press 1 to reattack, Press to 2 continue"))
@@ -107,12 +100,13 @@ class Battlefield:
 
 
 
+
     def robo_turn(self,robot):
         turn = 0
-        while turn < 4:
+        while turn <= 3:
             if (len(self.fleet.robots) > 0):
                 if (len(self.herd.dinosaurs) > 0):
-                    print ("Lets Pick a Robot to Attack!")
+                    print ("Lets Pick a Robot to Attack thoes Dino's!")
                     i = 0
                     while i < len(self.fleet.robots):
                         print(f"Press {i+1} for {self.fleet.robots[i].name}")
@@ -126,7 +120,7 @@ class Battlefield:
                     dino = int(input("Make a Choice"))
                     self.fleet.robots[robot-1].attack(self.herd.dinosaurs[dino-1])
                     turn +=1
-                    print(f"hart HIT!!!{self.herd.dinosaurs[dino-1].type}'s Health is at {self.herd.dinosaurs[dino-1].health}%")
+                    print(f" Hard HIT!!!{self.herd.dinosaurs[dino-1].type}'s Health is at {self.herd.dinosaurs[dino-1].health}%")
                     if (self.herd.dinosaurs[dino-1].health > 0):
                         print(f"{self.herd.dinosaurs[dino-1].type} is still alive")
                         x = int(input("Press 1 to reattack, Press to 2 contine"))
