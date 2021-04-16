@@ -10,8 +10,10 @@ class Battlefield:
 
     def run_game(self):
         x = self.display_welcome()
-        if (x == "Dino"):
-            self.dino_turn(self)
+        while (len(self.fleet.robots) > 0 & len(self.herd.dinosaurs) > 0):
+            if (x == "Dino"):
+                self.dino_turn(self)
+
 
 
 
@@ -56,15 +58,19 @@ class Battlefield:
 
     def dino_turn(self,dino):
         turn = 0
-        while turn < 3:
+        while turn < 4:
             print("Lets Pick a Dino to Attack!")
             i = 0
             while i < len(self.herd.dinosaurs):
                 print(f"Press {i+1} for {self.herd.dinosaurs[i].type}")
                 i += 1
-            dino = int(input("Make Choice"))
+            dino = int(input("Make a Choice"))
             print("Lets Pick a Target")
-            robot = int(input(f"Press 1 to Target {self.fleet.robots[0].name} Press 2 to Target {self.fleet.robots[1].name} Press 3 to Target {self.fleet.robots[2].name} "))
+            j = 0
+            while j < len(self.fleet.robots):
+                print(f"Press{j+1} for {self.fleet.robots[j].name}")
+                j +=1
+            robot = int(input("Make a Choice"))
             self.herd.dinosaurs[dino-1].attack(self.fleet.robots[robot-1])
             turn += 1
             print(f"Hard HIT!!!{self.fleet.robots[robot-1].name}'s Health is at {self.fleet.robots[robot-1].health}% ")
@@ -78,7 +84,11 @@ class Battlefield:
                     return
             elif (self.fleet.robots[robot-1].health <= 0):
                 self.fleet.robots.remove(self.fleet.robots[robot-1])
+            else:
+                pass
+        print("Turn is over now the Robots get a go!")
 
+    def robo_turn(robot):
 
 
 
@@ -113,7 +123,7 @@ class Battlefield:
 
 # def dino_turn(dinosaur): #void
 #
-    # def robo_turn(robot):
+
 
 #
 # def show_dino_opponent_option(): #void

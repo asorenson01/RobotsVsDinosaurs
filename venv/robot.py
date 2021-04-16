@@ -17,6 +17,10 @@ class Robot:
         return weapon
 
 
-
-
- # def attack(dinosaur): #void
+def attack(self, target):
+    print("<-------attacking-------->")
+    x = self.energy / 10
+    y = self.weapon.attack_power
+    z = x * y
+    self.energy -= 10
+    target.health = target.health - z
