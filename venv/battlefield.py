@@ -11,7 +11,7 @@ class Battlefield:
     def run_game(self):
         x = self.display_welcome()
         round = 1
-        while (round < 5):
+        while len(self.fleet.robots) > 0 and len(self.herd.dinosaurs) > 0:
             print(f"Get ready to BATTLE, Round{round}")
 
             if (x == "Dino"):
@@ -97,6 +97,19 @@ class Battlefield:
             else:
                 pass
         print("Turn is over now the Robots get a go!")
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     def robo_turn(self,robot):
         turn = 0
