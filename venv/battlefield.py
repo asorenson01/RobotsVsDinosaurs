@@ -53,7 +53,7 @@ class Battlefield:
             i += 1
 
     def dino_call_to_arms(self):
-        self.herd.creat_herd('T-Rex', 100, 'Raptor',10 , 'Compi', 100)
+        self.herd.creat_herd()
         i = 0
         print(f"Your Herd consits of {len(self.herd.dinosaurs)} Dinosaurs")
         while i < len(self.herd.dinosaurs):
