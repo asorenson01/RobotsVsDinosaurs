@@ -62,7 +62,7 @@ class Battlefield:
 
     def dino_turn(self,dino):
         turn = 0
-        while turn <= 3:
+        while turn < 3:
             if (len(self.herd.dinosaurs) > 0):
                 if (len(self.fleet.robots) > 0):
                     print("Lets Pick a Dino to Attack thoes Robots!")
@@ -103,7 +103,7 @@ class Battlefield:
 
     def robo_turn(self,robot):
         turn = 0
-        while turn <= 3:
+        while turn < 3:
             if (len(self.fleet.robots) > 0):
                 if (len(self.herd.dinosaurs) > 0):
                     print ("Lets Pick a Robot to Attack thoes Dino's!")

@@ -5,9 +5,9 @@ import battlefield
 
 class Dinosaur:
     def __init__(self):
+        self.attack_power = 0
         self.type = self.dino_type()
         self.energy = 0
-        self.attack_power = random.randint(5,10)
         self.health = 0
 
     def attack(self, target):
@@ -23,17 +23,16 @@ class Dinosaur:
         print("Press 1 for Tyrannosaurs Rex, Press 2 for Carnotaurus, Press 3 for Raptor, Press 4 for Brontosaurus ")
         x = int(input("Enter Selection"))
         if( x == 1 ):
-            y = random.randint(8,10)
-            self.attack_power = y
+            self.attack_power = random.randint(9, 10)
             return "Tyrannosaurus"
         elif ( x == 2 ):
-
+            self.attack_power = random.randint(7, 9)
             return "Carnotaurs"
         elif ( x == 3):
-
+            self.attack_power = random.randint(6, 10)
             return "Raptor"
         elif (x ==4):
-
+            self.attack_power = random.randint(2, 6)
             return "Brontosaurus"
 
 
